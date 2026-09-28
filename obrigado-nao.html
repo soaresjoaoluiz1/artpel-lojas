@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Solicitação recebida — Art Pel Embalagens</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo.png">
+
+<!-- Meta Pixel — SEM Lead (evita treinar otimizacao com desqualificado). So PageView + evento custom. -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+var META_PIXEL_ID='PIXEL_ID';
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var GA4_ID='G-XXXXXXXXXX';</script>
+
+<style>
+:root{--brand:#9A7B54;--brand-dark:#7A5F3E;--brand-light:#D4B896;--ink:#2A2119;--ink-soft:#5A4D3E;--bg:#FFFFFF;--cream:#F5F4F1;--cream-line:#E7E5E1}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 20px}
+.card{background:#fff;max-width:560px;width:100%;padding:48px 44px;border-radius:12px;box-shadow:0 10px 40px rgba(20,15,10,0.08);text-align:center}
+.icon-info{width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,var(--brand-light),var(--brand));display:inline-flex;align-items:center;justify-content:center;margin:0 auto 24px}
+.icon-info svg{width:36px;height:36px;stroke:#fff;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+h1{font-size:26px;font-weight:800;line-height:1.15;letter-spacing:-0.015em;margin-bottom:14px;text-wrap:balance}
+p{font-size:15.5px;line-height:1.6;color:var(--ink-soft);margin-bottom:16px}
+.actions{margin-top:28px;display:flex;flex-direction:column;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 26px;border-radius:5px;font-weight:600;font-size:15px;transition:transform .12s,background .2s;text-decoration:none}
+.btn:hover{transform:translateY(-1px)}
+.btn--primary{background:var(--brand);color:#fff}
+.btn--primary:hover{background:var(--brand-dark)}
+.btn--ghost{background:transparent;color:var(--ink);border:1px solid var(--cream-line)}
+.btn--ghost:hover{border-color:var(--brand);color:var(--brand)}
+.logo{margin-bottom:32px;display:inline-block}
+.logo img{height:96px;width:auto;object-fit:contain}
+.foot{font-size:12.5px;color:var(--ink-soft);margin-top:32px}
+</style>
+</head>
+<body>
+<div class="card">
+  <a href="/" class="logo"><img src="assets/logo.png" alt="Art Pel Embalagens"></a>
+  <div class="icon-info"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
+
+  <h1>Recebemos suas informações.</h1>
+  <p>Para esse perfil de compra, o atendimento industrial da Art Pel pode não ser a modalidade mais indicada no momento.</p>
+  <p>Estamos preparando um canal dedicado para lojas, atacadistas e distribuidores. Assim que estiver disponível, você poderá acessar mais informações sobre revenda.</p>
+
+  <div class="actions">
+    <!-- TODO: quando a LP2 (Lojas) estiver no ar, mudar href pra /lojas ou domínio dela -->
+    <a href="/" class="btn btn--primary">Voltar para o site</a>
+  </div>
+
+  <p class="foot">São José / SC — Produção própria há mais de 26 anos.</p>
+</div>
+
+<script>
+(function(){
+  let lead={};
+  try{lead=JSON.parse(sessionStorage.getItem('_artpel_lead')||'{}');}catch(e){}
+
+  // Pixel: SO PageView + evento custom (nao dispara Lead)
+  if(META_PIXEL_ID!=='PIXEL_ID'&&window.fbq){
+    try{
+      fbq('init',META_PIXEL_ID);
+      fbq('track','PageView');
+      fbq('trackCustom','LeadDesqualificado',{content_name:'LP Industrial Art Pel',motivo:'valor_baixo_ou_lojista'});
+    }catch(e){}
+  }
+  if(GA4_ID!=='G-XXXXXXXXXX'&&window.gtag){
+    try{gtag('event','lead_desqualificado',{event_category:'form',event_label:'LP Industrial'})}catch(e){}
+  }
+})();
+</script>
+</body>
+</html>
