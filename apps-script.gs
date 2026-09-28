@@ -22,11 +22,12 @@ function doPost(e) {
   try {
     const body = JSON.parse(e.postData.contents);
     const origem = String(body.origem || 'LP Industrial Art Pel');
-    // Roteia aba+tag POR SEGMENTO (nao mais por origem). Assim se um lead
-    // preenche a LP Industrial mas marca 'Loja ou atacadista' no segmento,
-    // ele cai na aba certa (LOJAS E DISTRIBUIDORES) com tag LP-LOJAS.
-    const segmento = String(body.segmento || '');
-    const isLoja = /loja|atacadista/i.test(segmento);
+    // Roteia aba+tag POR ORIGEM (mais confiavel que segmento). LP Lojas
+    // sempre vai pra aba LOJAS E DISTRIBUIDORES (tag LP-LOJAS), LP Industrial
+    // sempre pra INDUSTRIAS (tag LP-INDUSTRIAL). Assim opcoes como
+    // 'Supermercado / atacarejo' ou 'Outro' que nao batem no regex de
+    // segmento vao pra aba certa da LP que originou.
+    const isLoja = /loja|atacadista/i.test(origem);
     const sheetName = isLoja ? SHEET_LOJA : SHEET_INDUSTRIAL;
     const tag = isLoja ? TAG_LOJA : TAG_INDUSTRIAL;
 
