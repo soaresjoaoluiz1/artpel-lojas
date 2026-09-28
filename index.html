@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/hero-lojas.png">
+<link rel="preload" as="image" href="assets/hero-lojas.webp">
 
 <script type="application/ld+json">
 {
@@ -110,12 +110,12 @@ section[id]{scroll-margin-top:100px}
 .proof__ic{width:34px;height:34px;flex-shrink:0;color:var(--brand)}
 .proof__ic svg{width:100%;height:100%;stroke-width:1.4}
 .proof__tx{font-size:13.5px;line-height:1.35;color:var(--ink);font-weight:600}
-.hero__aside{position:relative;min-height:520px;border-radius:12px;background-color:#C4A97F;background-image:url('assets/hero-lojas.png');background-size:cover;background-position:center;overflow:visible}
+.hero__aside{position:relative;min-height:520px;border-radius:12px;background-color:#C4A97F;background-image:url('assets/hero-lojas.webp');background-size:cover;background-position:center;overflow:visible}
 .hero__hand{position:absolute;top:-8px;right:-24px;max-width:220px;transform:rotate(-4deg);z-index:2}
 .hero__hand p{font-family:'Caveat',cursive;font-size:26px;font-weight:700;line-height:1.15;color:var(--ink);text-align:center}
 
-/* PROBLEMA — fundo escuro com decorativo handwritten */
-.problem{background-color:var(--night);background-image:linear-gradient(135deg,var(--night) 0%,var(--night-2) 100%);color:#fff;padding:88px 32px;position:relative;overflow:hidden}
+/* PROBLEMA — foto sessao-lojas como bg com overlay escuro pra legibilidade */
+.problem{background-color:var(--night);background-image:linear-gradient(135deg,rgba(20,25,36,0.92) 0%,rgba(29,36,50,0.88) 100%),url('assets/sessao-lojas.webp');background-size:cover;background-position:center;background-repeat:no-repeat;color:#fff;padding:88px 32px;position:relative;overflow:hidden}
 .problem__inner{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,0.75fr);gap:44px;align-items:center}
 .problem .eyebrow{color:var(--brand-light)}
 .problem__h2{font-size:clamp(28px,2.8vw,40px);font-weight:800;line-height:1.1;letter-spacing:-0.015em;color:#fff;text-wrap:balance;margin-bottom:22px}
@@ -425,42 +425,42 @@ body.modal-open{overflow:hidden}
     </div>
     <div class="cards6">
       <article class="pcard">
-        <div class="pcard__img" style="background-image:url('assets/prod-pizza.png')"></div>
+        <div class="pcard__img" style="background-image:url('assets/prod-pizza.webp')"></div>
         <div class="pcard__body">
           <h3 class="pcard__title">Caixas para pizza</h3>
           <p class="pcard__desc">Diversos tamanhos e modelos.</p>
         </div>
       </article>
       <article class="pcard">
-        <div class="pcard__img" style="background-image:url('assets/prod-salgados.png')"></div>
+        <div class="pcard__img" style="background-image:url('assets/prod-salgados.webp')"></div>
         <div class="pcard__body">
           <h3 class="pcard__title">Caixas para salgados e doces</h3>
           <p class="pcard__desc">Ideais para lanchonetes, padarias e eventos.</p>
         </div>
       </article>
       <article class="pcard">
-        <div class="pcard__img" style="background-image:url('assets/prod-ecommerce.png')"></div>
+        <div class="pcard__img" style="background-image:url('assets/prod-ecommerce.webp')"></div>
         <div class="pcard__body">
           <h3 class="pcard__title">Caixas para e-commerce</h3>
           <p class="pcard__desc">Segurança no envio e diferentes medidas.</p>
         </div>
       </article>
       <article class="pcard">
-        <div class="pcard__img" style="background-image:url('assets/prod-mudanca.png')"></div>
+        <div class="pcard__img" style="background-image:url('assets/prod-mudanca.webp')"></div>
         <div class="pcard__body">
           <h3 class="pcard__title">Caixas para mudança</h3>
           <p class="pcard__desc">Resistência para transporte e organização.</p>
         </div>
       </article>
       <article class="pcard">
-        <div class="pcard__img" style="background-image:url('assets/prod-papelao.png')"></div>
+        <div class="pcard__img" style="background-image:url('assets/prod-papelao.webp')"></div>
         <div class="pcard__body">
           <h3 class="pcard__title">Caixas de papelão</h3>
           <p class="pcard__desc">Diversas dimensões e aplicações.</p>
         </div>
       </article>
       <article class="pcard">
-        <div class="pcard__img" style="background-image:url('assets/prod-outras.png')"></div>
+        <div class="pcard__img" style="background-image:url('assets/prod-outras.webp')"></div>
         <div class="pcard__body">
           <h3 class="pcard__title">Outras linhas</h3>
           <p class="pcard__desc">Complementam o mix da sua loja.</p>
