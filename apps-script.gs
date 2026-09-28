@@ -10,7 +10,7 @@ const SHEET_INDUSTRIAL = 'INDUSTRIAS';
 const SHEET_LOJA = 'LOJAS E DISTRIBUIDORES';
 const CRM_WEBHOOK_URL = 'https://drosagencia.com.br/crm/api/webhooks/sheets/art-pel-embalagens-ltda';
 const CRM_WEBHOOK_SECRET = ''; // se o CRM Dros exigir header X-Webhook-Secret, cole aqui
-const TAG_INDUSTRIAL = 'LP-INDUSTRIAL';
+const TAG_INDUSTRIAL = 'LP-INDUSTRIAS';
 const TAG_LOJA = 'LP-LOJAS';
 
 // Qualificacao: TODOS os leads vao pro CRM, exceto lojistas/atacadistas
