@@ -12,6 +12,10 @@ const CRM_WEBHOOK_URL = 'https://drosagencia.com.br/crm/api/webhooks/sheets/art-
 const CRM_WEBHOOK_SECRET = ''; // se o CRM Dros exigir header X-Webhook-Secret, cole aqui
 const TAG_INDUSTRIAL = 'LP-INDUSTRIAS';
 const TAG_LOJA = 'LP-LOJAS';
+// Lojistas que marcam "Até R$ 1.000" entram no CRM com essa tag extra
+// pra Everton saber que precisa repassar pro distribuidor parceiro.
+const TAG_ABAIXO_MINIMO = 'LP-ENCAMINHAR-DISTRIBUIDOR';
+const VALOR_ABAIXO_MINIMO = 'Até R$ 1.000';
 
 // Qualificacao: TODOS os leads vao pro CRM, exceto lojistas/atacadistas
 // (redirecionados pra LP2). Nao ha mais desqualificacao por quantidade.
@@ -29,7 +33,11 @@ function doPost(e) {
     // segmento vao pra aba certa da LP que originou.
     const isLoja = /loja|atacadista/i.test(origem);
     const sheetName = isLoja ? SHEET_LOJA : SHEET_INDUSTRIAL;
-    const tag = isLoja ? TAG_LOJA : TAG_INDUSTRIAL;
+    const tags = [isLoja ? TAG_LOJA : TAG_INDUSTRIAL];
+    // Lojista com compra média abaixo do mínimo → tag extra para repasse ao distribuidor
+    if (isLoja && String(body.valor_medio || '').trim() === VALOR_ABAIXO_MINIMO) {
+      tags.push(TAG_ABAIXO_MINIMO);
+    }
 
     const ss = SpreadsheetApp.openById(SHEET_ID);
     const sheet = ss.getSheetByName(sheetName);
@@ -42,7 +50,7 @@ function doPost(e) {
     // industria vira LP-INDUSTRIAL — cliente filtra no CRM depois se quiser)
     let statusCRM = 'Não enviado';
     let crmResponse = '';
-    const crmResult = enviarParaCRM(body, tag, origem);
+    const crmResult = enviarParaCRM(body, tags, origem);
     statusCRM = crmResult.ok ? 'Enviado ✓ (' + crmResult.status + ')' : 'Erro (' + crmResult.status + ')';
     crmResponse = String(crmResult.response || '').substring(0, 500);
 
@@ -104,7 +112,8 @@ function buildRow(body, statusCRM, crmResponse) {
   ];
 }
 
-function enviarParaCRM(body, tag, origem) {
+function enviarParaCRM(body, tagsInput, origem) {
+  const tagList = Array.isArray(tagsInput) ? tagsInput : [tagsInput];
   try {
     const cidadeParts = String(body.cidade || '').split(/[\/,-]/).map(s => s.trim()).filter(Boolean);
     const cidadeName = cidadeParts[0] || '';
@@ -141,7 +150,7 @@ function enviarParaCRM(body, tag, origem) {
       state: uf,
       source: origem,
       source_detail: sourceDetail,
-      tags: [tag],
+      tags: tagList,
       trabalha_anuncio: true,
       observations: obs,
       fbc: body.fbc || null,
@@ -202,8 +211,12 @@ function backfillCRM() {
       const status = String(row[iStatus] || '');
       if (!/N[aã]o enviado|Erro/i.test(status)) continue;
       const body = rowToBody(row, header);
-      const tag = name === SHEET_LOJA ? TAG_LOJA : TAG_INDUSTRIAL;
-      const result = enviarParaCRM(body, tag, name === SHEET_LOJA ? 'LP Loja Art Pel' : 'LP Industrial Art Pel');
+      const backfillIsLoja = name === SHEET_LOJA;
+      const backfillTags = [backfillIsLoja ? TAG_LOJA : TAG_INDUSTRIAL];
+      if (backfillIsLoja && String(body.valor_medio || '').trim() === VALOR_ABAIXO_MINIMO) {
+        backfillTags.push(TAG_ABAIXO_MINIMO);
+      }
+      const result = enviarParaCRM(body, backfillTags, backfillIsLoja ? 'LP Loja Art Pel' : 'LP Industrial Art Pel');
       sheet.getRange(r + 1, iStatus + 1).setValue(result.ok ? 'Enviado ✓ backfill (' + result.status + ')' : 'Erro backfill (' + result.status + ')');
       if (iResp >= 0) sheet.getRange(r + 1, iResp + 1).setValue(String(result.response || '').substring(0, 500));
       Utilities.sleep(500);
