@@ -313,7 +313,7 @@ body.modal-open{overflow:hidden}
 
 /* RESPONSIVO */
 @media (max-width:1080px){
-  .cards6{grid-template-columns:repeat(3,1fr)}
+  .cards6,.cards6.cards6--5{grid-template-columns:repeat(3,1fr)}
   .diff__inner{grid-template-columns:1fr;gap:32px}
   .problem__inner{grid-template-columns:1fr 1fr;gap:32px}
   .problem__hand{grid-column:span 2;text-align:center}
@@ -329,28 +329,29 @@ body.modal-open{overflow:hidden}
   .proofs{gap:20px}
   .produtos,.problem,.diff,.process,.social,.faq-section,.cta-block{padding:64px 20px}
   .produtos__head,.social__head{margin-bottom:36px}
-  .cards6{grid-template-columns:repeat(2,1fr);gap:14px}
+  .cards6,.cards6.cards6--5{grid-template-columns:repeat(2,1fr);gap:14px}
   .steps{grid-template-columns:1fr 1fr;gap:36px 22px}
   .pstep__arrow{display:none}
-  .pstep{align-items:flex-start;text-align:left}
+  .pstep{align-items:center;text-align:center}
   .factory__inner{grid-template-columns:1fr;min-height:auto}
   .factory__video{min-height:260px}
   .factory__body{padding:56px 20px}
   .metrics{grid-template-columns:repeat(2,auto);gap:28px 40px}
   .social__inner{grid-template-columns:1fr;gap:32px}
   .slider__btn{display:none}
-  .slider__viewport{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+  .slider__viewport{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;max-width:100%}
   .slider__viewport::-webkit-scrollbar{display:none}
   .slider__viewport{scrollbar-width:none}
-  .slider__track{transform:none !important;padding:4px 20px 4px 0}
-  .testimonial{flex:0 0 88%;scroll-snap-align:start}
+  .slider__track{transform:none !important;padding:4px 0;gap:14px}
+  .testimonial{flex:0 0 calc(100% - 8px);scroll-snap-align:center;box-sizing:border-box;max-width:calc(100% - 8px)}
   .problem__inner{grid-template-columns:1fr;gap:28px}
   .problem__hand{grid-column:span 1;padding:0}
   .diff__grid{grid-template-columns:1fr}
-  .footer__top{flex-direction:column;align-items:flex-start;gap:24px}
-  .footer__nav{gap:22px;flex-wrap:wrap}
+  .footer__top{flex-direction:column;align-items:center;text-align:center;gap:24px}
+  .footer__nav{gap:22px;flex-wrap:wrap;justify-content:center}
+  .footer__meta{text-align:center}
   .footer__bottom{padding:14px 20px}
-  .footer__bottom-inner{flex-direction:column;gap:8px;align-items:flex-start}
+  .footer__bottom-inner{flex-direction:column;gap:8px;align-items:center;text-align:center}
   .modal__card{padding:36px 24px 28px}
   .modal__title{font-size:22px}
   .modal__actions{flex-direction:column-reverse}
@@ -360,7 +361,7 @@ body.modal-open{overflow:hidden}
   .h1{font-size:32px}.sub{font-size:15px}
   .btn{padding:13px 20px;font-size:14px;width:100%;justify-content:center}
   .cta-row{width:100%}
-  .cards6{grid-template-columns:1fr}
+  .cards6,.cards6.cards6--5{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
   .metric__num{font-size:28px}
   .testimonial{flex:0 0 100%}
@@ -651,15 +652,13 @@ body.modal-open{overflow:hidden}
     </nav>
     <div class="footer__meta"><strong>São José - SC</strong>Produção própria há mais de 26 anos.</div>
     <div class="footer__social" aria-label="Redes sociais">
-      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg></a>
-      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-      <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22.5 6.5a2.8 2.8 0 0 0-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 5.5 2.8 2.8 0 0 0 2 2C5.3 20 12 20 12 20s6.7 0 8.5-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-5.5z"/><path d="M10 15V9l5 3-5 3z" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://instagram.com/artpel.embalagens" target="_blank" rel="noopener" aria-label="Instagram @artpel.embalagens"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg></a>
     </div>
   </div>
   <div class="footer__bottom">
     <div class="footer__bottom-inner">
       <span>&copy; 2026 Art Pel Embalagens. Todos os direitos reservados.</span>
-      <span>Produzido por <a href="https://agenciadros.com.br" target="_blank" rel="noopener" class="footer__credit">Agência Dros</a></span>
+      <span>Produzido por <a href="https://drosagencia.com.br" target="_blank" rel="noopener" class="footer__credit">Dros Agência</a></span>
     </div>
   </div>
 </footer>
