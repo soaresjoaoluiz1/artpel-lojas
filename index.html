@@ -44,12 +44,20 @@ fbq('track', 'PageView');
 <meta name="twitter:title" content="Art Pel — Embalagens para lojas e atacadistas revenderem">
 <meta name="twitter:description" content="Fábrica com produção própria. Variedade de caixas pra sua loja revender.">
 <meta name="twitter:image" content="https://www.artpelembalagens.com.br/lojas/assets/og-image.jpg">
+<meta name="twitter:site" content="@artpel.embalagens">
+<meta name="twitter:creator" content="@artpel.embalagens">
 
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="apple-touch-icon" href="assets/logo.png">
+<link rel="manifest" href="/lojas/manifest.webmanifest">
+<link rel="alternate" hreflang="pt-BR" href="https://www.artpelembalagens.com.br/lojas/">
+<link rel="alternate" hreflang="x-default" href="https://www.artpelembalagens.com.br/lojas/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://connect.facebook.net">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/hero-lojas.webp">
 
@@ -58,11 +66,59 @@ fbq('track', 'PageView');
   "@context":"https://schema.org",
   "@type":"Manufacturer",
   "name":"Art Pel Embalagens",
+  "alternateName":"Art Pel",
   "url":"https://www.artpelembalagens.com.br/lojas/",
   "logo":"https://www.artpelembalagens.com.br/lojas/assets/logo.png",
+  "image":"https://www.artpelembalagens.com.br/lojas/assets/og-image.jpg",
   "description":"Fábrica de embalagens de papelão para revenda: caixas pizza, salgados, e-commerce, mudança e mais. Atende lojas, atacadistas e distribuidores.",
+  "foundingDate":"2000",
   "address":{"@type":"PostalAddress","addressLocality":"São José","addressRegion":"SC","addressCountry":"BR"},
-  "areaServed":["SC","PR","RS","SP","RJ","BR"]
+  "areaServed":["SC","PR","RS","SP","RJ","BR"],
+  "makesOffer":[
+    {"@type":"Offer","itemOffered":{"@type":"Product","name":"Caixas para pizza"}},
+    {"@type":"Offer","itemOffered":{"@type":"Product","name":"Caixas para salgados e doces"}},
+    {"@type":"Offer","itemOffered":{"@type":"Product","name":"Caixas para e-commerce"}},
+    {"@type":"Offer","itemOffered":{"@type":"Product","name":"Caixas para mudança"}},
+    {"@type":"Offer","itemOffered":{"@type":"Product","name":"Chapas de papelão"}}
+  ],
+  "sameAs":["https://instagram.com/artpel.embalagens"]
+}
+</script>
+
+<!-- JSON-LD: LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "@id":"https://www.artpelembalagens.com.br/#localbusiness",
+  "name":"Art Pel Embalagens",
+  "image":"https://www.artpelembalagens.com.br/lojas/assets/og-image.jpg",
+  "logo":"https://www.artpelembalagens.com.br/lojas/assets/logo.png",
+  "url":"https://www.artpelembalagens.com.br/lojas/",
+  "telephone":"+55-48-98824-4798",
+  "priceRange":"$$",
+  "address":{"@type":"PostalAddress","addressLocality":"São José","addressRegion":"SC","postalCode":"88100-000","addressCountry":"BR"},
+  "geo":{"@type":"GeoCoordinates","latitude":-27.5881,"longitude":-48.6396},
+  "areaServed":["SC","PR","RS","SP","RJ","BR"],
+  "openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"18:00"}],
+  "sameAs":["https://instagram.com/artpel.embalagens"]
+}
+</script>
+
+<!-- JSON-LD: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Qual é o pedido mínimo?","acceptedAnswer":{"@type":"Answer","text":"Para novos clientes de revenda, trabalhamos com pedidos comerciais a partir de R$ 1.000."}},
+    {"@type":"Question","name":"Posso comprar diferentes tipos de caixas no mesmo pedido?","acceptedAnswer":{"@type":"Answer","text":"Sim. Uma das principais vantagens da proposta é reunir diferentes linhas no mesmo relacionamento comercial."}},
+    {"@type":"Question","name":"Preciso comprar grandes quantidades de um único modelo?","acceptedAnswer":{"@type":"Answer","text":"O mix é analisado conforme linhas disponíveis, quantidades e condições comerciais do pedido."}},
+    {"@type":"Question","name":"Vocês atendem fora de Santa Catarina?","acceptedAnswer":{"@type":"Answer","text":"Sim. A viabilidade depende da região, do volume do pedido e das condições de logística."}},
+    {"@type":"Question","name":"A Art Pel fabrica os produtos?","acceptedAnswer":{"@type":"Answer","text":"Sim. A Art Pel possui produção própria em São José/SC."}},
+    {"@type":"Question","name":"Posso começar com poucos modelos?","acceptedAnswer":{"@type":"Answer","text":"Sim. Nossa equipe pode ajudar a identificar quais linhas fazem mais sentido para o perfil da sua loja."}},
+    {"@type":"Question","name":"Vocês vendem para consumidor final?","acceptedAnswer":{"@type":"Answer","text":"O foco desta página é o atendimento B2B para empresas que compram embalagens para revenda."}}
+  ]
 }
 </script>
 
@@ -221,6 +277,12 @@ section[id]{scroll-margin-top:100px}
 .slider__viewport{overflow:hidden;flex:1}
 .slider__track{display:flex;gap:22px;transition:transform .35s cubic-bezier(.35,.65,.35,1)}
 .testimonial{flex:0 0 calc((100% - 44px) / 3);background:#fff;border-radius:10px;padding:26px 24px 22px;box-shadow:0 1px 2px rgba(20,15,10,0.04),0 6px 18px rgba(20,15,10,0.05);display:flex;flex-direction:column;gap:14px;min-height:200px}
+.testimonial{transition:transform .2s cubic-bezier(.2,.7,.3,1),box-shadow .2s}
+.testimonial:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(20,15,10,0.08)}
+.pstep{transition:transform .2s cubic-bezier(.2,.7,.3,1)}
+.pstep:hover{transform:translateY(-2px)}
+.diff__col{transition:transform .2s cubic-bezier(.2,.7,.3,1),box-shadow .2s}
+.diff__col:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(20,15,10,0.06)}
 .testimonial__quote{color:var(--brand);font-size:32px;line-height:1;font-weight:800;height:22px;overflow:hidden}
 .testimonial__tx{font-size:14px;line-height:1.55;font-style:italic;color:var(--ink);flex:1}
 .testimonial__author{font-size:13px;font-weight:700;color:var(--ink);padding-top:6px}
@@ -376,7 +438,7 @@ body.modal-open{overflow:hidden}
 <header class="hdr">
   <div class="hdr__inner">
     <a href="/" class="brand" aria-label="Art Pel Embalagens">
-      <img src="assets/logo.png" alt="Art Pel Embalagens" class="brand__logo">
+      <img src="assets/logo.png" alt="Art Pel Embalagens" class="brand__logo" width="339" height="240" fetchpriority="high" decoding="async">
     </a>
     <nav class="nav" aria-label="Navegacao principal">
       <a href="#produtos">Produtos</a>
@@ -642,7 +704,7 @@ body.modal-open{overflow:hidden}
 <footer class="footer">
   <div class="footer__top">
     <a href="/" class="brand" aria-label="Art Pel Embalagens">
-      <img src="assets/logo.png" alt="Art Pel Embalagens" class="brand__logo">
+      <img src="assets/logo.png" alt="Art Pel Embalagens" class="brand__logo" width="339" height="240" loading="lazy" decoding="async">
     </a>
     <nav class="footer__nav" aria-label="Rodapé">
       <a href="#produtos">Produtos</a>
@@ -768,7 +830,7 @@ body.modal-open{overflow:hidden}
 /* MOTION reveal on scroll */
 (function(){
   if(!('IntersectionObserver' in window)) return;
-  const t=document.querySelectorAll('.problem__intro,.pcard,.diff__col,.pstep,.factory__inner,.social__inner,.faq,.cta-block__inner');
+  const t=document.querySelectorAll('.hero__main,.hero__aside,.problem__intro,.pcard,.diff__col,.pstep,.factory__inner,.social__inner,.testimonial,.faq,.cta-block__inner');
   t.forEach(el=>el.classList.add('reveal'));
   const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}})},{threshold:0.12,rootMargin:'0px 0px -50px 0px'});
   t.forEach(el=>io.observe(el));

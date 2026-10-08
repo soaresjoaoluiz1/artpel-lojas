@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/logo.png$
+
+Sitemap: https://www.artpelembalagens.com.br/sitemap.xml

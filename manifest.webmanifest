@@ -1,0 +1,17 @@
+{
+  "name": "Art Pel Embalagens - Lojas e Atacado",
+  "short_name": "Art Pel Lojas",
+  "description": "Linhas de caixas direto da fabrica para lojas, atacadistas e distribuidores. Sao Jose/SC.",
+  "start_url": "/lojas/",
+  "scope": "/lojas/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F5F4F1",
+  "theme_color": "#141924",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/lojas/assets/logo.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/lojas/assets/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/lojas/assets/logo.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" }
+  ]
+}
