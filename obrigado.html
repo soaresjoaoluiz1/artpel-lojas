@@ -110,7 +110,12 @@ p{font-size:15.5px;line-height:1.6;color:var(--ink-soft);margin-bottom:8px}
 
   // GA4 conversion
   if(GA4_ID!=='G-XXXXXXXXXX'&&window.gtag){
-    try{gtag('event','generate_lead',{currency:'BRL',value:100.00,event_category:'form',event_label:'LP Industrial'})}catch(e){}
+    try{gtag('event','generate_lead',{currency:'BRL',value:100.00,event_category:'form',event_label:'LP Lojas'})}catch(e){}
+  }
+
+  // Google Ads conversion — Enviar formulario de lead
+  if(window.gtag){
+    try{gtag('event','conversion',{'send_to':'AW-18498510154/wvSjCKyQ15UdEMq64_RE','value':1.0,'currency':'BRL'})}catch(e){}
   }
 
   // Auto-abre WhatsApp em 2s (opcional — descomente pra ativar)
