@@ -339,11 +339,13 @@ body.modal-open{overflow:hidden}
   .metrics{grid-template-columns:repeat(2,auto);gap:28px 40px}
   .social__inner{grid-template-columns:1fr;gap:32px}
   .slider__btn{display:none}
-  .slider__viewport{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;max-width:100%}
+  .social__inner > *{min-width:0}
+  .slider{min-width:0;width:100%;overflow:hidden}
+  .slider__viewport{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;min-width:0;width:100%}
   .slider__viewport::-webkit-scrollbar{display:none}
   .slider__viewport{scrollbar-width:none}
   .slider__track{transform:none !important;padding:4px 0;gap:14px}
-  .testimonial{flex:0 0 calc(100% - 8px);scroll-snap-align:center;box-sizing:border-box;max-width:calc(100% - 8px)}
+  .testimonial{flex:0 0 100%;scroll-snap-align:start;box-sizing:border-box;max-width:100%;min-width:0}
   .problem__inner{grid-template-columns:1fr;gap:28px}
   .problem__hand{grid-column:span 1;padding:0}
   .diff__grid{grid-template-columns:1fr}
